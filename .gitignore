@@ -1,5 +1,7 @@
 .idea/
 .DS_Store
+.memory/
+AGENTS.md
 /tmp
 /out-tsc
 /dist
