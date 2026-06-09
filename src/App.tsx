@@ -6,6 +6,7 @@ import { PlaceholderImage } from './components/PlaceholderImage';
 import { ProductConfigurator } from './components/ProductConfigurator';
 import { engineeringBullets, footerLinks } from './content/productPageContent';
 import { useScrollReveal } from './hooks/useScrollReveal';
+import heroProductImage from '../res/openclaws-holder-image-v1.png';
 
 function CrisisDiagram() {
   return (
@@ -127,10 +128,10 @@ function App() {
         <main>
           <section className="hero-section">
             <div className="hero-media">
-              <PlaceholderImage
-                label="Hero product photo placeholder"
-                detail="Mac with OpenClaws attached"
-                variant="hero"
+              <img
+                className="hero-product-image"
+                src={heroProductImage}
+                alt="OpenClaws product holding a Mac open"
               />
               <div className="hero-copy" data-reveal>
                 <p className="brand-kicker">OpenClaws</p>
@@ -144,13 +145,13 @@ function App() {
                   <strong>$199</strong>
                 </div>
               </div>
+              <FeatureStrip />
             </div>
             <button className="hero-button" type="button" onClick={scrollToConfiguration}>
               Pre-order now
             </button>
             <p className="shipping-note">Ships next month.</p>
           </section>
-          <FeatureStrip />
           <ProductStorySection />
           <CrisisDiagram />
           <EngineeringSection />

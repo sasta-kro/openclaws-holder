@@ -63,6 +63,14 @@ describe('OpenClaws benefit layout', () => {
     expect(screen.getAllByText('Stays cool')).toHaveLength(1);
     expect(screen.getAllByText('Secure hold')).toHaveLength(1);
   });
+
+  it('places the benefit trio over the hero media', () => {
+    render(<App />);
+
+    const benefitRegion = screen.getByRole('region', { name: /openclaws benefits/i });
+
+    expect(benefitRegion.closest('.hero-media')).toBeInTheDocument();
+  });
 });
 
 describe('OpenClaws hero layout', () => {
@@ -72,5 +80,11 @@ describe('OpenClaws hero layout', () => {
     const heroHeading = screen.getByRole('heading', { name: /keep your agents running 24\/7/i });
 
     expect(heroHeading.closest('.hero-media')).toBeInTheDocument();
+  });
+
+  it('renders the product image in the hero media', () => {
+    render(<App />);
+
+    expect(screen.getByRole('img', { name: /openclaws product holding a mac open/i })).toBeInTheDocument();
   });
 });
