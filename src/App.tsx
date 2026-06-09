@@ -4,7 +4,7 @@ import { FeatureStrip } from './components/FeatureStrip';
 import { Header } from './components/Header';
 import { PlaceholderImage } from './components/PlaceholderImage';
 import { ProductConfigurator } from './components/ProductConfigurator';
-import { engineeringBullets, footerLinks, productFeatures } from './content/productPageContent';
+import { engineeringBullets, footerLinks } from './content/productPageContent';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 function CrisisDiagram() {
@@ -71,17 +71,6 @@ function ProductStorySection() {
           plausible deniability can coexist.
         </p>
       </div>
-      <div className="story-feature-grid">
-        {productFeatures.map((feature) => (
-          <article key={feature.label}>
-            <span className="feature-icon" aria-hidden="true">
-              {feature.iconLabel}
-            </span>
-            <h3>{feature.title}</h3>
-            <p>{feature.summary}</p>
-          </article>
-        ))}
-      </div>
     </section>
   );
 }
@@ -124,10 +113,17 @@ function App() {
     setIsCheckoutModalOpen(false);
   }
 
+  function scrollToConfiguration() {
+    document.getElementById('configure')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+
   return (
     <>
       <div className="page-shell" id="top">
-        <Header onBuyClick={openCheckoutModal} />
+        <Header onConfigureClick={scrollToConfiguration} />
         <main>
           <section className="hero-section">
             <div className="hero-copy" data-reveal>
@@ -146,20 +142,7 @@ function App() {
               detail="Mac with OpenClaws attached"
               variant="hero"
             />
-            <div className="hero-feature-row">
-              {productFeatures.map((feature) => (
-                <article key={feature.label}>
-                  <span className="feature-icon feature-icon-small" aria-hidden="true">
-                    {feature.iconLabel}
-                  </span>
-                  <div>
-                    <strong>{feature.title}</strong>
-                    <p>{feature.summary}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <button className="hero-button" type="button" onClick={openCheckoutModal}>
+            <button className="hero-button" type="button" onClick={scrollToConfiguration}>
               Pre-order now
             </button>
             <p className="shipping-note">Ships next month.</p>

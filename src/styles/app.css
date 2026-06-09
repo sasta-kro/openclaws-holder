@@ -212,25 +212,7 @@
   text-transform: none;
 }
 
-.hero-feature-row {
-  z-index: 2;
-  display: grid;
-  width: min(100%, 760px);
-  gap: 1rem;
-  margin-top: clamp(0.3rem, 1vw, 0.8rem);
-}
-
-.hero-feature-row article {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.75rem;
-  align-items: center;
-  text-align: left;
-}
-
-.hero-feature-row strong,
 .feature-item h3,
-.story-feature-grid h3,
 .engineering-copy h3 {
   display: block;
   margin: 0;
@@ -238,9 +220,7 @@
   line-height: 1.05;
 }
 
-.hero-feature-row p,
-.feature-item p,
-.story-feature-grid p {
+.feature-item p {
   margin: 0.22rem 0 0;
   color: rgba(5, 5, 5, 0.72);
   font-size: 0.92rem;
@@ -257,13 +237,6 @@
   color: var(--color-ink);
   font-size: 0.9rem;
   font-weight: 900;
-}
-
-.feature-icon-small {
-  width: 2.65rem;
-  height: 2.65rem;
-  border-width: 1.5px;
-  font-size: 0.68rem;
 }
 
 .hero-button,
@@ -320,7 +293,9 @@
 }
 
 .story-copy {
-  max-width: 720px;
+  max-width: 820px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .story-copy h2,
@@ -334,22 +309,6 @@
   color: rgba(5, 5, 5, 0.72);
   font-size: clamp(1.05rem, 2vw, 1.45rem);
   line-height: 1.35;
-}
-
-.story-feature-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.story-feature-grid article {
-  padding: 1.35rem;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-medium);
-  background: rgba(255, 255, 255, 0.38);
-}
-
-.story-feature-grid .feature-icon {
-  margin-bottom: 1.2rem;
 }
 
 .crisis-section {
@@ -730,19 +689,8 @@
     display: flex;
   }
 
-  .hero-feature-row,
-  .feature-strip,
-  .story-feature-grid {
+  .feature-strip {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .hero-feature-row article {
-    border-right: 1px solid var(--color-line);
-    padding-right: 1rem;
-  }
-
-  .hero-feature-row article:last-child {
-    border-right: 0;
   }
 
   .diagram-grid {
@@ -762,11 +710,6 @@
   .engineering-grid,
   .configurator-grid {
     grid-template-columns: 1.05fr 0.95fr;
-  }
-
-  .story-section {
-    grid-template-columns: 0.9fr 1.1fr;
-    align-items: end;
   }
 
   .section-heading {

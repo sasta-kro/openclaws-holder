@@ -1,10 +1,10 @@
 import { navigationItems } from '../content/productPageContent';
 
 type HeaderProps = {
-  onBuyClick: () => void;
+  onConfigureClick: () => void;
 };
 
-export function Header({ onBuyClick }: HeaderProps) {
+export function Header({ onConfigureClick }: HeaderProps) {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="OpenClaws home">
@@ -20,7 +20,7 @@ export function Header({ onBuyClick }: HeaderProps) {
           </a>
         ))}
       </nav>
-      <button className="header-buy-button" type="button" onClick={onBuyClick}>
+      <button className="header-buy-button" type="button" onClick={onConfigureClick}>
         Buy
       </button>
     </header>
