@@ -64,3 +64,13 @@ describe('OpenClaws benefit layout', () => {
     expect(screen.getAllByText('Secure hold')).toHaveLength(1);
   });
 });
+
+describe('OpenClaws hero layout', () => {
+  it('places hero copy over the media placeholder', () => {
+    render(<App />);
+
+    const heroHeading = screen.getByRole('heading', { name: /keep your agents running 24\/7/i });
+
+    expect(heroHeading.closest('.hero-media')).toBeInTheDocument();
+  });
+});

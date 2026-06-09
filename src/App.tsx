@@ -126,22 +126,25 @@ function App() {
         <Header onConfigureClick={scrollToConfiguration} />
         <main>
           <section className="hero-section">
-            <div className="hero-copy" data-reveal>
-              <p className="brand-kicker">OpenClaws</p>
-              <h1>Keep agents running 24/7.</h1>
-              <p>
-                A precision claw that keeps a Mac slightly open so background agents can stay alive.
-              </p>
-              <div className="hero-price">
-                <span>Only</span>
-                <strong>$199</strong>
+            <div className="hero-media">
+              <PlaceholderImage
+                label="Hero product photo placeholder"
+                detail="Mac with OpenClaws attached"
+                variant="hero"
+              />
+              <div className="hero-copy" data-reveal>
+                <p className="brand-kicker">OpenClaws</p>
+                <h1>Keep your agents running 24/7.</h1>
+                <p>
+                  A precision claw that keeps a Mac slightly open so background agents can stay
+                  alive.
+                </p>
+                <div className="hero-price">
+                  <span>Only</span>
+                  <strong>$199</strong>
+                </div>
               </div>
             </div>
-            <PlaceholderImage
-              label="Hero product photo placeholder"
-              detail="Mac with OpenClaws attached"
-              variant="hero"
-            />
             <button className="hero-button" type="button" onClick={scrollToConfiguration}>
               Pre-order now
             </button>
